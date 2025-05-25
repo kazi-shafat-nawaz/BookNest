@@ -5,7 +5,7 @@ import logo from "../assets/logo.png"
 const Footer = () => {
     return (
         <>
-            <footer className='bg-gray-900 text-gray-100 pt-2'>
+            <footer className='bg-gray-800 text-gray-100 pt-2'>
                 <div className='mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center'>
                     {/* div 1: Logo and Moto */}
                     <div>
