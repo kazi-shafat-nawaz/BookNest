@@ -7,6 +7,7 @@ import Contact from "./routes/Contact";
 import Hotels from "./routes/Hotels";
 import Login from "./routes/Login";
 import Signup from "./routes/Signup";
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
