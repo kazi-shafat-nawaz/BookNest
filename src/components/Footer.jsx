@@ -7,10 +7,10 @@ import OurMap from "./OurMap";
 const Footer = () => {
     return (
         <>
-            <footer className='bg-gray-800 text-gray-100 pt-2'>
-                <div className='mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center'>
+            <footer className='bg-gray-800 text-gray-100 pt-2 '>
+                <div className='mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center '>
                     {/* div 1: Logo and Moto */}
-                    <div>
+                    <div >
                         <div className="flex items-center gap-2 justify-center mt-7">
                             <img src={logo} alt="Hotel Logo" className="h-10 w-auto" />
                             <span className="text-1xl italic font-semibold">Book<span className="text-yellow-400">Nest</span></span>
@@ -44,9 +44,9 @@ const Footer = () => {
                     </div>
 
                     {/* div 4: Follow Us */}
-                    <div className="flex flex-col gap-5">
+                    <div className="flex flex-col gap-5 items-center ">
                         <h4 className="text-lg font-bold text-gray-300">Follow Us</h4>
-                        <div className="flex flex-row justify-around w-40 ml-16">
+                        <div className="flex flex-row justify-center items-center space-x-4 w-40 ">
                             <a
                                 href="https://www.facebook.com/"
                                 target="_blank"
