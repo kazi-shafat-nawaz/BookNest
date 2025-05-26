@@ -1,12 +1,14 @@
+import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png"
+import OurMap from "./OurMap";
 
 
 const Footer = () => {
     return (
         <>
             <footer className='bg-gray-800 text-gray-100 pt-2'>
-                <div className='mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center'>
+                <div className='mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center'>
                     {/* div 1: Logo and Moto */}
                     <div>
                         <div className="flex items-center gap-2 justify-center mt-7">
@@ -18,8 +20,6 @@ const Footer = () => {
                             <h4>Stay Anywhere, Book Here</h4>
                         </div>
                     </div>
-
-
 
                     {/* div 2: Quick Links */}
                     <div className='flex flex-col gap-2'>
@@ -42,30 +42,61 @@ const Footer = () => {
                             <li className="hover:text-white hover:underline"><Link to="/t&c">Terms & Conditions</Link></li>
                         </ul>
                     </div>
-                </div>
-                <br />
-                {/* div 4: Find Us with map */}
-                <div className='flex flex-col justify-center items-center h-96'>
-                    <div className="h-full w-full flex justify-center p-4">
-                        <iframe
-                            title="our location"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.437474988804!2d90.36752857457975!3d23.803037786754913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1fa13c3521d%3A0x7e9113ef0f1fe673!2sXEON%20TECHNOLOGY%20LIMITED!5e0!3m2!1sen!2sbd!4v1748157025293!5m2!1sen!2sbd"
-                            width="85%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            className="rounded-2xl"
-                        ></iframe>
+
+                    {/* div 4: Follow Us */}
+                    <div className="flex flex-col gap-5">
+                        <h4 className="text-lg font-bold text-gray-300">Follow Us</h4>
+                        <div className="flex flex-row justify-around w-40 ml-16">
+                            <a
+                                href="https://www.facebook.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                                className="hover:text-blue-500 transition-colors"
+                            >
+                                <FaFacebookF size={22} />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                                className="hover:text-pink-500 transition-colors"
+                            >
+                                <FaInstagram size={22} />
+                            </a>
+                            <a
+                                href="https://x.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                                className="hover:text-gray-400 transition-colors"
+                            >
+                                <FaXTwitter size={22} />
+                            </a>
+                            <a
+                                href="https://www.youtube.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                                className="hover:text-red-500 transition-colors"
+                            >
+                                <FaYoutube size={22} />
+                            </a>
+                        </div>
                     </div>
                 </div>
+
+                <br />
+
+                {/* div 5: Find Us with map */}
+                <OurMap />
+
+                {/* div 6: rights and reserved */}
                 <div className="flex justify-center pb-4">
                     <p className="text-gray-300 text-xs">© 2025 BookNest. All rights reserved.</p>
                 </div>
             </footer>
-
-
         </>
     );
 };
