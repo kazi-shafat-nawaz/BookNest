@@ -44,9 +44,9 @@ const Footer = () => {
                     </div>
 
                     {/* div 4: Follow Us */}
-                    <div className="flex flex-col gap-5">
+                    <div className="flex flex-col gap-5 items-center">
                         <h4 className="text-lg font-bold text-gray-300">Follow Us</h4>
-                        <div className="flex flex-row justify-around w-40 ml-16">
+                        <div className="justify-around w-40 grid grid-cols-4 md:grid-cols-4">
                             <a
                                 href="https://www.facebook.com/"
                                 target="_blank"
