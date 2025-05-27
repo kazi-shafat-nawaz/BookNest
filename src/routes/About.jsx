@@ -8,13 +8,12 @@ const About = () => {
         {/* Left Column – Hotel Image */}
         <div>
           <img
-            src="/images/hotel3.jpg" 
+            src="/images/hotel3.jpg"
             alt="Hotel"
             className="w-full h-auto rounded-lg shadow-lg"
           />
         </div>
 
-      
         <div>
           <h2 className="text-3xl font-bold mb-4">About Us</h2>
           <p className="mb-4 text-gray-600">
@@ -38,7 +37,7 @@ const About = () => {
           {/* Team Member 1 */}
           <div>
             <img
-              src="/images/shafat.png" 
+              src="/images/shafat.png"
               alt="Shafat"
               className="w-28 h-28 mx-auto rounded-full object-cover shadow-md"
             />
@@ -57,8 +56,8 @@ const About = () => {
             <p className="text-sm text-gray-600">Frontend Developer</p>
           </div>
 
-          
-         
+
+
         </div>
       </div>
     </div>
