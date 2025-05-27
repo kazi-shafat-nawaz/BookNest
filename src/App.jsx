@@ -8,10 +8,12 @@ import Hotels from "./routes/Hotels";
 import Login from "./routes/Login";
 import Signup from "./routes/Signup";
 import Footer from './components/Footer';
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+       <ScrollToTop />
       <Navbar />
 
       <Routes>

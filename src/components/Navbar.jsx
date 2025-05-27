@@ -1,12 +1,14 @@
 
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Icon library (install with: npm install lucide-react)
 import logo from "../assests/nest.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  
 
   return (
     <nav className="bg-slate-800 shadow-lg fixed top-0 left-0 w-full z-50">
@@ -29,9 +31,9 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-white hover:text-sky-300 text-lg font-light">Home</Link>
-            <Link to="/about" className="text-white hover:text-sky-300 text-lg font-light">About</Link>
-            <Link to="/contact" className="text-white hover:text-sky-300 text-lg font-light">Contact</Link>
+            <Link to="/" onClick={() => setIsOpen(false)} className="text-white hover:text-sky-300 text-lg font-light">Home</Link>
+            <Link to="/about" onClick={() => setIsOpen(false)} className="text-white hover:text-sky-300 text-lg font-light">About</Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="text-white hover:text-sky-300 text-lg font-light">Contact</Link>
             <Link to="/hotels" className="text-white hover:text-sky-300 text-lg font-light">Hotels</Link>
           </div>
 
@@ -54,10 +56,10 @@ const Navbar = () => {
         {/* Mobile Dropdown Menu */}
         {isOpen && (
           <div className="md:hidden mt-2 space-y-2 pb-4">
-            <Link to="/" className="block text-white hover:text-sky-300 text-lg">Home</Link>
-            <Link to="/about" className="block text-white hover:text-sky-300 text-lg">About</Link>
-            <Link to="/contact" className="block text-white hover:text-sky-300 text-lg">Contact</Link>
-            <Link to="/hotels" className="block text-white hover:text-sky-300 text-lg">Hotels</Link>
+            <Link to="/" onClick={() => setIsOpen(false)} className="block text-white hover:text-sky-300 text-lg">Home</Link>
+            <Link to="/about" onClick={() => setIsOpen(false)} className="block text-white hover:text-sky-300 text-lg">About</Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="block text-white hover:text-sky-300 text-lg">Contact</Link>
+            <Link to="/hotels" onClick={() => setIsOpen(false)} className="block text-white hover:text-sky-300 text-lg">Hotels</Link>
             <div className="mt-2">
               <input
                 type="text"

@@ -1,6 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
+
+  
   return (
     <div className="bg-white text-gray-800 pt-24 px-4">
       {/* Top Grid Section */}
