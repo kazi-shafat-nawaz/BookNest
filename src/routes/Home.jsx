@@ -1,5 +1,7 @@
-import React from "react";
+
+import React, { useState } from "react";
 import HeroSlider from "../components/HeroSlider";
+import SearchBar from "../components/SearchBar";
 
 const destinations = [
   { title: "Paris", image: "/images/paris.jpg" },
@@ -28,7 +30,11 @@ const hotels = [
 const Home = () => {
   return (
     <>
+    <div className="relative">
       <HeroSlider />
+      <SearchBar/>
+    </div>
+      
 
       <div className="pt-20">
         {/* Top Destinations */}
