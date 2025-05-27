@@ -30,11 +30,10 @@ const hotels = [
 const Home = () => {
   return (
     <>
-    <div className="relative">
-      <HeroSlider />
-      <SearchBar/>
-    </div>
-      
+      <div className="relative">
+        <HeroSlider />
+        <SearchBar />
+      </div>
 
       <div className="pt-20">
         {/* Top Destinations */}
@@ -67,7 +66,7 @@ const Home = () => {
             {hotels.map((hotel, index) => (
               <div
                 key={index}
-                className="bg-white shadow-lg rounded-lg overflow-hidden"
+                className="bg-white shadow-lg rounded-xl overflow-hidden"
               >
                 <img
                   src={hotel.image}

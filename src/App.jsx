@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 const App = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
-       <ScrollToTop />
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
@@ -24,7 +24,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
-      <Footer />
+
+      {/* <Footer /> */}
     </div>
   );
 };
