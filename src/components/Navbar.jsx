@@ -10,13 +10,13 @@ const Navbar = () => {
 
   return (
     <nav className="bg-slate-800 shadow-lg left-0 w-full sticky top-0 z-50">
-    <nav className="bg-slate-800 shadow-lg fixed top-0 left-0 w-full z-50 ">
+    {/* <nav className="bg-slate-800 shadow-lg fixed top-0 left-0 w-full z-50 "> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Hotel Logo" className="h-10 w-auto" />
-            <span className="text-2xl italic font-semibold text-white">
+            <span className="text-2xl italic font-semibold text-white ">
               Book<span className="text-yellow-400">Nest</span>
             </span>
           </Link>
@@ -135,6 +135,7 @@ const Navbar = () => {
         )}
       </div>
     </nav>
+    //  </nav>
   );
 };
 
