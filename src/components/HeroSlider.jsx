@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 
 const HeroSlider = () => {
   return (
-    <div className="pt-16">
+    <div>
       {" "}
       {/* padding top to avoid navbar overlap */}
       <Carousel

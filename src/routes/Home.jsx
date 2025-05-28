@@ -75,7 +75,7 @@ const Home = () => {
             {hotels.map((hotel, index) => (
               <div
                 key={index}
-                className="bg-white shadow-lg rounded-lg overflow-hidden"
+                className="bg-white shadow-lg rounded-xl overflow-hidden"
               >
                 <img
                   src={hotel.image}
@@ -85,17 +85,17 @@ const Home = () => {
                 <div className="p-4">
                   <h3 className="text-xl font-semibold">{hotel.name}</h3>
                   <p className="text-sm text-gray-600">{hotel.location}</p>
-                  <button className="mt-3 bg-yellow-400 text-slate-800 px-4 py-1 rounded hover:bg-yellow-300">
-                    Book Now
+                  <button className="mt-3 bg-yellow-400 text-slate-800 rounded-lg hover:bg-yellow-300 flex items-center justify-center px-4 py-2">
+                    BOOK NOW
                   </button>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </section >
 
         {/* Testimonials */}
-        <section className="bg-white py-12">
+        <section section className="bg-white py-12" >
           <h2 className="text-3xl font-bold text-center mb-6">
             What Our Guests Say
           </h2>
@@ -106,8 +106,8 @@ const Home = () => {
             </p>
             <p className="mt-2 italic text-sm">– Sarah M., London</p>
           </div>
-        </section>
-      </div>
+        </section >
+      </div >
     </>
   );
 };

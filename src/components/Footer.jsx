@@ -23,8 +23,7 @@ const Footer = () => {
 
                     {/* div 2: Quick Links */}
                     <div className='flex flex-col gap-2'>
-                        <h4 className="text-lg font-bold text-gray-300">Quick Links</h4>
-                        <ul className="text-gray-400 text-sm flex flex-col gap-2">
+                        <ul className="text-gray-400 text-sm flex flex-col gap-2 p-5">
                             <li className="hover:text-white hover:underline"><Link to="/">Home</Link></li>
                             <li className="hover:text-white hover:underline"><Link to="/hotels">Hotels</Link></li>
                             <li className="hover:text-white hover:underline"><Link to="/services">Services</Link></li>
@@ -34,8 +33,7 @@ const Footer = () => {
 
                     {/* div 3: Resources*/}
                     <div className='flex flex-col gap-2'>
-                        <h4 className="text-lg font-bold text-gray-300">Resources</h4>
-                        <ul className="text-gray-400 text-sm flex flex-col gap-2">
+                        <ul className="text-gray-400 text-sm flex flex-col gap-2 p-5">
                             <li className="hover:text-white hover:underline"><Link to="/faq">FAQ</Link></li>
                             <li className="hover:text-white hover:underline"><Link to="/contact">Contact Us</Link></li>
                             <li className="hover:text-white hover:underline"><Link to="/privacy">Privacy Policy</Link></li>
@@ -44,9 +42,8 @@ const Footer = () => {
                     </div>
 
                     {/* div 4: Follow Us */}
-                    <div className="flex flex-col gap-5 items-center ">
-                        <h4 className="text-lg font-bold text-gray-300">Follow Us</h4>
-                        <div className="flex flex-row justify-center items-center space-x-4 w-40 ">
+                    <div className="flex flex-col gap-5 items-center justify-center">
+                        <div className="flex flex-row justify-center items-center space-x-4 w-40 gap-1">
                             <a
                                 href="https://www.facebook.com/"
                                 target="_blank"
@@ -86,8 +83,6 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
-                <br />
 
                 {/* div 5: Find Us with map */}
                 <OurMap />

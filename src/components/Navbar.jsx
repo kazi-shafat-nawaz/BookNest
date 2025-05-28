@@ -9,13 +9,14 @@ const Navbar = () => {
 
 
   return (
+    <nav className="bg-slate-800 shadow-lg left-0 w-full sticky top-0 z-50">
     <nav className="bg-slate-800 shadow-lg fixed top-0 left-0 w-full z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Hotel Logo" className="h-10 w-auto" />
-            <span className="text-2xl italic font-semibold text-white ">
+            <span className="text-2xl italic font-semibold text-white">
               Book<span className="text-yellow-400">Nest</span>
             </span>
           </Link>
@@ -69,12 +70,12 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="px-3 py-1 rounded-md text-sm focus:outline-none focus:ring focus:ring-yellow-400"
+              className="px-3 py-1 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            // className="w-full p-2 border border-gray-600 rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200"
             />
-            <Link
-              to="/login"
-              className="ml-4 bg-yellow-400 text-slate-800 px-4 py-1 rounded-md text-sm font-medium hover:bg-yellow-300"
-            >
+            <Link to="/login" className="ml-4 bg-yellow-400 text-slate-800 px-4 py-1 rounded-md text-sm font-medium hover:bg-yellow-300 flex items-center justify-center">
+
+              {/* <button className="mt-3 bg-yellow-400 text-slate-800 rounded-lg hover:bg-yellow-300 flex items-center justify-center px-4 py-2"></button> */}
               Login
             </Link>
             <Link
