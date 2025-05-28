@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import HeroSlider from "../components/HeroSlider";
 import SearchBar from "../components/SearchBar";
 
+
 const destinations = [
   { title: "Paris", image: "/images/paris.jpg" },
   { title: "Bali", image: "/images/bali.webp" },
@@ -28,11 +29,18 @@ const hotels = [
 ];
 
 const Home = () => {
+
+  const [searchData, setSearchData] = useState(null);
+
+  const handleSearch = (data) => {
+    setSearchData(data); // { city, checkIn, checkOut, guests, rooms }
+  };
   return (
     <>
     <div className="relative">
       <HeroSlider />
-      <SearchBar/>
+       <SearchBar onSearch={handleSearch} />
+      
     </div>
       
 
