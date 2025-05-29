@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import ContactForm from "./routes/ContactForm";
-import Hotels from "./routes/Hotels";
 import Login from "./routes/Login";
 import Signup from "./routes/Signup";
 import Footer from './components/Footer';
@@ -24,8 +23,8 @@ const App = () => {
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        
-        
+
+
       </Routes>
 
       <Footer />
