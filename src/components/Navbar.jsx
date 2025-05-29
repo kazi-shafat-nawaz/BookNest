@@ -42,7 +42,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="px-3 py-1 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="bg-gray-100 px-3 py-1 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
             // className="w-full p-2 border border-gray-600 rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200"
             />
             <Link to="/login" className="ml-4 bg-yellow-400 text-slate-800 px-4 py-1 rounded-md text-sm font-medium hover:bg-yellow-300 flex items-center justify-center">
