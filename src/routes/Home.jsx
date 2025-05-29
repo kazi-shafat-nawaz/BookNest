@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import HeroSlider from "../components/HeroSlider";
 import SearchBar from "../components/SearchBar";
 
@@ -7,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 const destinations = [
   { title: "Paris", image: "/images/paris.jpg" },
   { title: "Bali", image: "/images/bali.webp" },
-  { title: "Dubai", image: "/images/dubai.webp" },
+  { title: "Dubai", image: "/images/dubai.webp" }
 ];
 
 const hotels = [
@@ -30,19 +29,19 @@ const hotels = [
 
 const Home = () => {
 
-  const [searchData, setSearchData] = useState(null);
+  // const [searchData, setSearchData] = useState(null);
 
-  const handleSearch = (data) => {
-    setSearchData(data); // { city, checkIn, checkOut, guests, rooms }
-  };
+  // const handleSearch = (data) => {
+  //   setSearchData(data); // { city, checkIn, checkOut, guests, rooms }
+  // };
   return (
     <>
-    <div className="relative">
-      <HeroSlider />
-       <SearchBar onSearch={handleSearch} />
-      
-    </div>
-      
+      <div className="relative">
+        <HeroSlider />
+        <SearchBar />
+
+      </div>
+
 
       <div className="pt-20">
         {/* Top Destinations */}
