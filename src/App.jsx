@@ -10,6 +10,7 @@ import Signup from "./routes/Signup";
 import Footer from './components/Footer';
 import ScrollToTop from "./components/ScrollToTop";
 
+
 const App = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -23,6 +24,8 @@ const App = () => {
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        
+        
       </Routes>
 
       <Footer />
