@@ -1,8 +1,66 @@
-import React from "react";
+import { useState } from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import OurMap from "../components/OurMap";
+
 
 const ContactForm = () => {
+
+  const contactFormData = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: ""
+  };
+
+  const [formData, setFormData] = useState(contactFormData);
+  const [errors, setErrors] = useState({});
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+
+  const handleReset = () => {
+    setFormData(contactFormData);
+    setErrors({});
+  }
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // validation part
+    const newErrors = {};
+
+    if (!formData.firstName.trim()) newErrors.firstName = "First Name is required";
+    if (!formData.lastName.trim()) newErrors.lastName = "Last Name is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) return;
+
+    console.log(Object.keys(newErrors).length);
+
+
+    // if no errors, proceed to submit
+    console.log("Submitted Data:", formData);
+    localStorage.setItem("contactFormData", JSON.stringify(formData));
+    setFormData(contactFormData);
+    alert("Form Submitted Successfully!");
+    setErrors({});
+  }
+
+
+
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 p-8 gap-8">
@@ -30,22 +88,35 @@ const ContactForm = () => {
         {/*--------------------------------------------------------------------------------------------------*/}
 
         {/* Form */}
-        <form >
+        <form onSubmit={handleSubmit}>
           <div className="bg-white flex flex-col md:flex-col p-5 space-y-7 rounded-xl border border-gray-200 shadow-[0_0_20px_rgba(0,0,0,0.2)]">
             {/* Name Fields */}
             <div className="flex flex-col gap-1 text-slate-800">
               <label className="font-medium">Name <span className="text-red-500">*</span></label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  className="w-full p-2 border border-gray-600 rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 col-span-1"
-                  placeholder="First"
-                />
-                <input
-                  type="text"
-                  className="w-full p-2 border border-gray-600 rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 "
-                  placeholder="Last"
-                />
+                <div>
+                  <input
+                    type="text"
+                    className={`w-full p-2 border rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 col-span-1
+                      ${errors.firstName ? 'border-red-500' : 'border-gray-600'}`}
+                    placeholder="First"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                  />
+                  {errors.firstName && <p className="text-red-500 text-sm ml-2 mt-1">{errors.firstName}</p>}
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    className="w-full p-2 border border-gray-600 rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 "
+                    placeholder="Last"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                  />
+                  {errors.lastName && <p className="text-red-500 text-sm ml-2 mt-1">{errors.lastName}</p>}
+                </div>
               </div>
             </div>
 
@@ -54,9 +125,14 @@ const ContactForm = () => {
               <label className="font-medium">Email <span className="text-red-500">*</span></label>
               <input
                 type="email"
-                className="w-full p-2 border border-gray-600 rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200"
+                className={`w-full p-2 border rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200
+                  ${errors.email ? 'border-red-500' : 'border-gray-600'}`}
                 placeholder="john@gmail.com"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
               />
+              {errors.email && <p className="text-red-500 text-sm ml-2 mt-1">{errors.email}</p>}
             </div>
 
             {/* Phone field */}
@@ -64,10 +140,15 @@ const ContactForm = () => {
               <label className="font-medium">Phone <span className="text-red-500">*</span></label>
               <input
                 type="tel"
-                className="w-full p-2 border border-gray-600 rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200"
+                className={`w-full p-2 border rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200
+                  ${errors.phone ? 'border-red-500' : 'border-gray-600'}`}
                 placeholder="013********"
                 maxLength={11}
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
               />
+              {errors.phone && <p className="text-red-500 text-sm ml-2 mt-1">{errors.phone}</p>}
             </div>
 
             {/* Message field */}
@@ -76,13 +157,30 @@ const ContactForm = () => {
               <textarea
                 placeholder="Type your message here..."
                 className="w-full h-28 p-2 border border-gray-600 rounded-lg transition focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
               />
             </div>
-            <div className="flex justify-center items-center">
-              <button
-                type="submit"
-                className="bg-yellow-400 text-slate-800 rounded-lg hover:bg-yellow-300 flex items-center justify-center px-4 py-2 font-semibold"
-              >Submit</button>
+
+            <div className="flex justify-around items-center">
+              <div>
+                <button
+                  type="button"
+                  className="bg-blue-500 text-white rounded-lg hover:bg-blue-400 flex items-center justify-center px-4 py-2 font-semibold"
+                  onClick={handleReset}
+                >
+                  Reset</button>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  className="bg-yellow-400 text-slate-800 rounded-lg hover:bg-yellow-300 flex items-center justify-center px-4 py-2 font-semibold"
+                >
+                  Submit</button>
+              </div>
+
+
             </div>
           </div>
         </form>
